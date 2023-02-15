@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>05_재귀함수.html</title>
+  <style>
+
+  </style>
+</head>
+    
+<body>
+
+    <h3>재귀적 함수 호출</h3>
+
+  <script>
+
+    //재귀적 함수 호출
+    //->자신이 자신의 함수를 호출할 수 있다.
+
+    document.write(fact(3)); //3팩토리얼값 구하기   --> 함수 선언문(function fact())의 경우 위치 상관 없이 호출가능
+    ////////////////////////////////////////////
+
+    function fact(f){
+        if(f==0){
+            return 1;
+        }else{
+            return f*fact(f-1);
+        }
+    }
+  </script>
+</body>
+</html>
