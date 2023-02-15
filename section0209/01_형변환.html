@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>01_형변환.html</title>
+  <style>
+
+  </style>
+</head>
+    
+<body>
+
+    <h3>자료형변환 (Type Conversion)</h3>
+
+  <script>
+    //참조 https://www.w3schools.com/js/js_type_conversion.asp
+    //형변환 : 필요한 곳에서 일시적(강제적)으로 변환
+
+    document.write(10+20);      //30
+    document.write("10"+"20");  //1020
+    document.write("<hr>");
+
+
+    //1. Number()
+    //-> 숫자로 구성된 문자열을 숫자형으로 변환 가능
+    //참조 https://www.w3schools.com/jsref/jsref_number.asp
+    document.write(Number("10")); //10(숫자형)
+    document.write("<hr>");
+    document.write(Number("10")+Number("30")); //30
+    document.write("<hr>");
+    document.write(Number("10     "));  //10
+    document.write("<hr>");
+    document.write(Number("     10"));  //10
+    document.write("<hr>");
+    
+    document.write(Number("10.23"));    //10.23
+    document.write("<hr>");
+    
+    document.write(Number("KOREA"));    //NaN
+    document.write("<hr>");
+    document.write(Number("1 2 3"));    //NaN
+    document.write("<hr>");
+
+    document.write(Number(true));       //1
+    document.write("<hr>");
+    document.write(Number(false));      //0
+    document.write("<hr>");
+
+
+    //2. parseInt()
+    //-> 숫자로 구성된 문자열을 정수형으로 반환
+    document.write(parseInt("10"));    //10
+    document.write("<hr>");
+    document.write(parseInt("-10"));   //-10
+    document.write("<hr>");
+    document.write(parseInt("10.23")); //10 (실수값 버려짐)
+    document.write("<hr>");
+    document.write(parseInt("Seoul")); //NaN (Not a Number)
+    document.write("<hr>");
+    
+
+    //3. parseFloat()
+    //-> 숫자로 구성된 문자열을 실수형으로 변환
+    document.write(parseFloat("10"));     //10
+    document.write("<hr>");
+    document.write(parseFloat("10.23"));  //10.23
+    document.write("<hr>");
+    document.write(parseFloat("JAVA"));   //NaN
+    document.write("<hr>");
+    //////////////////////////////////////////////////////
+
+
+    //4. String()
+    //-> 문자형으로 변환
+    document.write(String(123));    //"123"
+    document.write("<hr>");
+    document.write(String(123)+String(456));   //"123456"
+    document.write("<hr>");
+    
+    
+    //5. toString()
+    //-> 문자형으로 변환
+    document.write((123).toString());    //"123"
+    document.write("<hr>");
+    document.write((123).toString()+(456).toString());   //"123456"
+    document.write("<hr>");
+    ///////////////////////////////////////////////////////////////////
+    
+    
+    //6. Boolean값의 형변환
+    document.write(Number(true));       //1
+    document.write("<hr>");
+    document.write(Number(false));      //0
+    document.write("<hr>");
+
+    document.write(String(true));       //1
+    document.write("<hr>");
+    document.write(String   (false));      //0
+    document.write("<hr>");
+    ///////////////////////////////////////////////////////////////
+
+
+    //7. eval()
+    document.write("10+20");    //10+20
+    document.write("<hr>");
+    document.write(eval("10+20"));  //30
+    document.write("<hr>")
+
+
+    let x=10;
+    let y=20;
+    let text="x" * "y";
+    document.write(text);
+    document.write("<hr>");
+    document.write(eval(text));
+    document.write("<hr>");
+    ///////////////////////////////////////////////
+
+
+    //8.isNaN() 숫자가 아니지? = 맞으면 false / 틀리면 true
+    //  숫자형으로 구성된 값인지?
+    document.write(isNaN(123)); //false
+    document.write("<hr>");
+    document.write(isNaN(-1.23));
+    document.write("<hr>");
+    document.write(isNaN("123"));   //false
+    document.write("<hr>"); 
+    document.write(isNaN("Korea")); //true
+    document.write("<hr>");
+    document.write(isNaN(3.4));
+    document.write("<hr>");
+    
+
+
+
+  </script>
+</body>
+</html>
