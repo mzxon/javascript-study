@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>08_연산자.html</title>
+  <style>
+
+  </style>
+</head>
+    
+<body>
+
+    <h3>연산자</h3>
+
+  <script>
+
+    //1. () 연산자
+    document.write(3+4+5/2);
+    document.write((3+4+5)/2);
+    document.write("<hr>");
+
+
+
+    //2. 대입 연산자
+    let num=3;
+
+    num=num+2;
+    document.write(num+"<hr>");
+
+    num+=2;
+    document.write(num+"<hr>"); 
+
+    num=num-3;
+    document.write(num+"<hr>"); 
+
+    num-=3;
+    document.write(num+"<hr>"); 
+
+    num*=10;
+    document.write(num+"<hr>"); 
+
+    num/=2;
+    document.write(num+"<hr>"); 
+
+    num%=2;
+    document.write(num+"<hr>"); 
+
+
+    //3. 1증감연산자
+    let a=3;
+    a=a+1;
+    document.write(a+"<hr>");
+    a+=1;
+    document.write(a+"<hr>");
+    a++;
+    document.write(a+"<hr>");
+    ++a;
+    document.write(a+"<hr>");
+
+    let b=3;
+    b=b-1;
+    document.write(b+"<hr>");
+    b-=1;
+    document.write(b+"<hr>");
+    b--;
+    document.write(b+"<hr>");
+    --b;
+    document.write(b+"<hr>");
+
+
+    //1증감연산자는 다른 계산식과 같이 사용할 경우 주의!!
+    let c=10;
+    let d=20;
+
+    let i=c++;      //let i=c
+                    //c=c+1
+
+
+    let j=--d;      //d=d-1;
+                    //j=d;
+
+    document.write(c+d+i+j);
+    document.write("<hr>");
+    //////////////////////////////
+    
+
+
+    //4. 삼항연산자
+    //형식) (조건) ? 참 : 거짓
+
+    //문1) 절대값을 구하시오
+    let su=-5; 
+    let result=(su<0) ? su*-1 : su;
+              // -5<0     -5*-1
+
+    
+    document.write(su+" 절대값: "+result);
+    document.write("<hr>");
+
+
+    let n=3;
+    document.write(n*-1);  //이항
+    document.write(-n);    //n*-2
+
+    document.write("<hr>");
+
+
+    //문2) 세개의 수 중에서 가장 큰값(최대값)을 구하시오
+    let x=7, y=5, z=9;
+
+    let max = (x<y) ? y : x;
+
+    max = (max<z) ? z : max;
+
+    document.write(x + "," + y + "," + z + "중 최대값 :" + max);
+
+
+  </script>
+</body>
+</html> 
