@@ -8,11 +8,16 @@
   </style>
 </head>
     
-<body>
+<body onload="alert('어서와~~')">
 
     <h3>이벤트</h3>
 
-    <form action="">
+    <form name="myform" id="myform" action="ok.jsp" onsubmit="return true">
+        <!-- 
+            onsubmit이벤트는 해당폼(myform)이 서버로 전송될 때
+            return 값이 true이면 해당폼이 전송된다. (onsubmit은 return값이 있음)
+            return 값이 false이면 전송되지 않는다. ==> 유효성검사에서 활용할 수 있음
+         -->
         <input type="button" value="버튼1" onclick="alert('버튼 클릭')">
         <hr>
 
@@ -30,16 +35,27 @@
         <textarea name="5" cols="10" rows="5" onkeydown="alert('키보드누름')"></textarea>
 
         <hr>
-
-        <select onchange="alert('목록변경')">;
+        <select onchange="alert('목록변경')">
             <option>서울</option>
             <option selected>제주</option>
             <option>부산</option>
         </select>
+        <hr>
+
+
+        <!-- 텍스트 입력상자에 커서가 들어왔을때 onfocus 이벤트 -->
+        <input type="text" onfocus="alert('커서 들어옴')">
+        <hr>
+
+        <!-- 서버로 해당폼이 전송될 때 onsubmit 이벤트 -->
+        <!-- 폼을 서버로 전송하는 컨트롤 요소들 -->
+        <input type="submit" value="전송1">
+        <button>전송2</button><!--기본속성이 submit-->
+        <input type="image" src="../../images/search.png"><!--기본속성이 submit-->
     </form> 
 
 
-    <input type="text" onfocus="alert('커서 들어옴')">;
+    
 
 
 
