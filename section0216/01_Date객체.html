@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>blank.html</title>
+  <style>
+
+  </style>
+</head>
+    
+<body>
+
+    <h3>Date객체 날짜 세팅</h3>
+
+  <script>
+    
+    //참조 https://www.w3schools.com/js/js_date_methods_set.asp
+
+    const someday=new Date();
+
+    someday.setFullYear(1989, 5, 8);    //1989년 6월(-1이 들어감) 8일 
+
+    document.write(someday.getFullYear());
+    document.write("<br>");
+    document.write(someday.getMonth());
+    document.write("<br>");
+    document.write(someday.getDate());
+    document.write("<br>");
+    
+    const days = ["일","월","화","수","목","금","토"];
+    document.write(days[someday.getDay()]);
+    document.write("<hr>");
+
+   
+    const d = new Date();
+    //someday값에서 10일 더하기 1989년 6월 18일
+    d.setDate(someday.getDate()+10);
+    document.write(d.getDate());
+
+    //somdeday값에서 
+    get.setFullYear(someday.getFullYear()-3);
+    document.write(d.getFullYear());
+
+
+
+  </script>
+</body>
+</html>

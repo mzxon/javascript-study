@@ -65,10 +65,16 @@
     
     today += " ";
     
-    if(d.getHours()>=13){
-        today += "PM" + " " + (d.getHours()-12) + ":";
+    
+    if(d.getHours()>12){
+        today += "PM";
     }else{
-        today += "AM" + " " + d.getHours() + ":";
+        today += "AM";
+    }
+    if(d.getHours()>13){
+        today += d.getHours()-12 + ":";
+    }else{
+        today += d.getHours() + ":";
     }
     
     if(d.getMinutes()<10){
