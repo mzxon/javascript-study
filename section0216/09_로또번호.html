@@ -21,17 +21,28 @@
         //문) 로또번호 1~45사이의 수를 서로 겹치지 않게 6개 발생시킨후,
         //    오름차순으로 정렬해서 id=demo에 출력하시오
 
-        let number=[];
         let lotto=[];
+
+
         for(let i=0; i<6; i++){
-            number = Math.floor(Math.random() * 45) + 1;
-            lotto[i]=number;
-        }
+            lotto[i] = parseInt(Math.random() * 45) + 1;
+            
+            for(let j=0; j<i; j++){
+              if(lotto[i]==lotto[j]){ //로또번호가 중복되었는지?
+                i--;
+                break;
+              }
+            }
+          }            
+            /*
+                lotto[i]일때 i보다 적은수까지 lotto[j]가 lotto[i]랑 같은지 반복
+                만약에 같으면 i를 하나 감소시키고 (그 배열칸은 없애야하니까)
+                break해서 반복문 빠져나옴
+                다시 i 증가하고 번호 받음
+            
+            */
         lotto.sort(function(a, b){return a - b});
         document.getElementById("demo").innerHTML=lotto;
-
-
-
     }
 
   </script>
