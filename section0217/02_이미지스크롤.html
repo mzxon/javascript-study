@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>02_이미지스크롤.html</title>
+  <style>
+    #mydiv{
+        position: relative;    /*부모가 되는 div*/
+        left: 100px;
+        top: 10px;
+        width: 800px;
+        height: 100px;
+        background-color: hotpink;
+    }
+  </style>
+  <script>
+    //1) 스크롤하고자 하는 이미지를 전역변수에 저장
+    let ctnt=[];
+    ctnt[0]="<img src='../../images/angel.png' width='85'>";
+    ctnt[1]="<img src='../../images/devil.png' width='85'>";
+    ctnt[2]="<img src='../../images/smile.png' width='85'>";
+    ctnt[3]="<img src='../../images/angel.png' width='85'>";
+    ctnt[4]="<img src='../../images/devil.png' width='85'>";
+    ctnt[5]="<img src='../../images/smile.png' width='85'>";
+    ctnt[6]="<img src='../../images/angel.png' width='85'>";
+    ctnt[7]="<img src='../../images/devil.png' width='85'>";
+  
+    
+    //2) 1)에서 준비한 이미지를 id=mydiv에 배치하기
+    function start(){
+        
+        /*
+        document.write("<div id='area0' style='position:absolute; top:0; left:0;'>"); //자식 포지션을 absoulte로 하면 부모 안에서만 움직임
+        document.write(ctnt[0]);        // 그림을 div안에 넣어서 "그림"만 움직이게
+        document.write("</div>");       // 배경이 되는 div와의 여백은 0 ==> 배경안에서 움직임
+
+        document.write("<div id='area1' style='position:absolute; top:0; left:90px;'>");
+        document.write(ctnt[1]);        
+        document.write("</div>");   
+        */  
+
+        //문) 반복문을 활용해서 이미지 8장 배치하기
+        for(let i=0; i<ctnt.length; i++){
+            document.write("<div id='area" + i + "' style='position:absolute; top:0; left:" + (i*90) + "px;'>");
+            document.write(ctnt[i]);        
+            document.write("</div>"); 
+        }
+
+        //3) 3초 후에 scroll함수 1번 호출
+        setTimeout(scroll, 3000);    
+    }
+  
+    function scroll(){
+        //alert("scroll함수 호출");
+        //alert(document.getElementById("area0"));
+        //alert(document.getElementById("area0").style);
+        //alert(document.getElementById("area0").style.left);
+
+        //5) id=area0의 스타일을 가져와서 왼쪽 여백값을 -10px만큼 줄이기
+        //let tmp=document.getElementById("area0").style;
+        //tmp.left=parseInt(tmp.left)-10 + "px";
+    
+        //문)5의 내용을 참조해서 이미지 8장을 동시에 왼쪽 여백 조정하기
+
+        for(let i=0; i<ctnt.length; i++){
+            let tmp = document.getElementById("area"+i).style;
+            tmp.left=parseInt(tmp.left)-10 + "px";
+        }
+    }
+  
+  
+  </script>
+</head>
+    
+<body>
+
+    <h3>이미지스크롤</h3>
+    <input type="button" value="이미지 스크롤 중지">
+
+    <!-- 이미지가 스크롤 되는 위치 -->
+    <div id="mydiv">
+        <script> start(); </script>
+    </div>
+</body>
+</html>
