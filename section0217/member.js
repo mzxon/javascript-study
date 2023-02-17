@@ -135,7 +135,7 @@ function validate2(){
     alert(frm);
 
     //<form action="ok2.jsp"></form>와 동일한 기능의 자바스크립트 속성
-    frm.action="ok2.jsp";
+    frm.action="ok2.jsp";   // 제출하면 ok2.jsp로 넘어감
 
     //<input type=submit>과 동일한 기능의 자바스크립트 함수
     frm.submit(); // html에 안쓰고 submit 제어 가능
