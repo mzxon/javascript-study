@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>02_계산기.html</title>
+  <style>
+    .txt{
+        border: 2px solid #ccffff;
+        text-align: right;
+        font-weight: bold;
+        font-size: 20px;
+        color: black;
+        height: 30px;
+        background-color: #f5f5f5;
+    }
+  </style>
+</head>
+    
+<body>
+    
+    <h3>미니 계산기</h3>
+
+    <form>
+        <table border="1">
+            <tr>
+                <td colspan="5">
+                    <input type="text" name="result" id="result" size="20" value=0 readonly class="txt">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="    7   " onclick="inputData(7)"></td>
+                <td><input type="button" value="    8   " onclick="inputData(8)"></td>
+                <td><input type="button" value="    9   " onclick="inputData(9)"></td>
+                <td><input type="button" value="    /   "></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="    4   " onclick="inputData(4)"></td>
+                <td><input type="button" value="    5   " onclick="inputData(5)"></td>
+                <td><input type="button" value="    6   " onclick="inputData(6)"></td>
+                <td><input type="button" value="    *   "></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="    1   " onclick="inputData(1)"></td>
+                <td><input type="button" value="    2   " onclick="inputData(2)"></td>
+                <td><input type="button" value="    3   " onclick="inputData(3)"></td>
+                <td><input type="button" value="    -   "></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="    0   " onclick="inputData(0)"></td>
+                <td><input type="button" value="    .   "></td>
+                <td><input type="button" value="    =   "></td>
+                <td><input type="button" value="    +   "></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="    ←   ">
+                </td>
+                <td colspan="2">
+                    <input type="button" value="    c   " onclick="cls()">
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+
+
+  <script>
+    //1) C버튼을 클릭하면 id=result에 0을 대입
+    function cls(){
+        document.getElementById("result").value=0;
+    }
+
+    //2) 클릭한 숫자 버튼에 맞는 숫자를 출력하기
+    function inputData(su){
+        //alert(su);
+        //document.getElementById("result").value+=su;
+        //-> result.value에 들어있는 문자형 0이 있기때문에 0이 계속 앞에 있음
+
+        //id=result값을 숫자형으로 변환 "0123" -> 123
+        //-> 원래 값 + 넣고자하는 값을 number처리해주면 숫자형으로 바껴서 0 사라짐
+        document.getElementById("result").value = Number(document.getElementById("result").value + su);
+
+
+
+    }
+  </script>
+</body>
+</html>
